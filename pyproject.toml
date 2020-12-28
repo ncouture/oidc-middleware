@@ -13,8 +13,8 @@ requires = [
   "firebase-admin==4.5.0",
   "datamodel-code-generator==0.6.13",
   "uvicorn==0.13.2",
-  "google-measurement-protocol==1.1.0",
   "configparser"
+  # "google-measurement-protocol==1.1.0",
 ]
 requires-python=">=3.6"
 description-file="README.md"
