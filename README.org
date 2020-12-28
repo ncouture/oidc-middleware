@@ -1,0 +1,45 @@
+*[aw]sgi firestore middleware*
+
+* TODO Document "Installation"
+* Build
+  Install bazel as described on https://docs.bazel.build/versions/3.7.0/install.html
+* Developers
+** gcloud development environment
+  #+BEGIN_SRC shell
+  # appengine enables the datastore API that's firestore
+  gcloud services enable appengine.googleapis.com
+  # generate
+  gcloud alpha firestore databases create --project=project-id --region=region
+  #+END_SRC
+** pre-commit hooks
+  #+BEGIN_SRC shell
+  pip install -r requirements-dev.txt
+  pre-commit install
+  #+END_SRC
+** test coverage
+  #+BEGIN_SRC shell
+  interrogate -v .
+  #+END_SRC
+* Firestore
+** Start the local emulation server
+   #+BEGIN_SRC shell
+   export GOOGLE_APPLICATION_CREDENTIALS="/home/user/Downloads/service-account-file.json"
+
+   #+END_SRC
+** Custom authentication
+  Generate a Service Account credentials by visiting
+
+  Firebase Console > Project Settings > Service Accounts
+    - https://console.firebase.google.com/project/_/settings/serviceaccounts/adminsdk)
+  click on **GENERATE NEW PRIVATE KEYS**.
+
+  You will need it in the firestore/exampletokengenerator/auth.html.
+
+* References
+  - https://github.com/tiangolo/fastapi
+  - https://fastapi.tiangolo.com/advanced/middleware/
+  - https://fastapi.tiangolo.com/tutorial/security/get-current-user/
+  - https://koxudaxi.github.io/datamodel-code-generator/
+  - https://pydantic-docs.helpmanual.io/datamodel_code_generator/#example
+  - https://developers.google.com/protocol-buffers/
+  - https://developers.google.com/protocol-buffers/docs/pythontutorial

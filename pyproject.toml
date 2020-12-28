@@ -1,0 +1,64 @@
+[build-system]
+requires = ["flit_core >=2,<4"]
+build-backend = "flit_core.buildapi"
+
+[tool.flit.metadata]
+module = "firestore_middleware"
+author = "Nicolas Couture"
+author-email = "nicolas.couture@gmail.com"
+home-page = "https://github.com/ncouture/firestore-middleware"
+requires = [
+  "fastapi==0.63.0",
+  "pydantic[email,typing_extensions,dotenv]==1.7.3",
+  "firebase-admin==4.5.0",
+  "datamodel-code-generator==0.6.13",
+  "uvicorn==0.13.2",
+  "google-measurement-protocol==1.1.0",
+  "configparser"
+]
+requires-python=">=3.6"
+description-file="README.md"
+classifiers=[
+  "Development Status :: 1 - Planning",
+  "Environment :: Web Environment",
+  "Framework :: Bottle",
+  "Framework :: Django",
+  "Framework :: Paste",
+  "Framework :: Plone",
+  "Framework :: Pylons",
+  "Framework :: Pyramid",
+  "Topic :: Internet :: WWW/HTTP :: WSGI :: Middleware",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)",
+  "Programming Language :: Python :: 3.6",
+  "Programming Language :: Python :: Implementation :: CPython",
+  "Topic :: Internet :: WWW/HTTP",
+  "Topic :: Internet :: WWW/HTTP :: HTTP Servers",
+  "Topic :: Internet :: WWW/HTTP :: WSGI :: Middleware",
+  "Topic :: Software Development :: Libraries :: Python Modules",
+  "Topic :: Security",
+  "Topic :: System :: Logging",
+  "Topic :: System :: Monitoring",
+  "Topic :: System :: Networking :: Firewalls",
+]
+[tool.flit.metadata.requires-extra]
+test = [
+    "pytest==6.2.1",
+    "pytest-cov==2.10.1",
+    "pylint==2.6.0",
+    "pre-commit==2.9.3",
+]
+doc = ["sphinx"]
+
+[tool.flit.metadata.urls]
+Documentation = "https://firestore-middleware.readthedocs.io/en/latest/"
+
+[tool.flit.sdist]
+include = ["doc/"]
+exclude = ["doc/*.html"]
+
+[tool.datamodel-codegen]
+field-constraints = true
+snake-case-field = true
+strip-default-none = false
+target-python-version = "3.7"

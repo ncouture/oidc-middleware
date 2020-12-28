@@ -1,0 +1,9 @@
+authlib==0.15.2
+datamodel-code-generator==0.6.13
+fastapi==0.63.0
+firebase-admin==4.5.0
+google-measurement-protocol==1.1.0
+httpx==0.16.1
+itsdangerous==1.1.0
+pydantic[email,typing_extensions,dotenv]==1.7.3
+uvicorn==0.13.2
