@@ -22,5 +22,6 @@ docs/_autosummary
 .vscode
 /.coverage
 .env
+.envrc
 sa.json
 bazel-*

@@ -1,4 +1,4 @@
-workspace(name = "firestore_middleware")
+workspace(name = "com_github_ncouture_firestore_middleware")
 
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
@@ -85,9 +85,9 @@ http_archive(
     urls = ["https://github.com/bazelbuild/rules_docker/releases/download/v0.15.0/rules_docker-v0.15.0.tar.gz"],
 )
 
-# load("@io_bazel_rules_docker//toolchains/docker:toolchain.bzl",
-#     docker_toolchain_configure="toolchain_configure"
-# )
+load("@io_bazel_rules_docker//toolchains/docker:toolchain.bzl",
+    docker_toolchain_configure="toolchain_configure"
+)
 
 # docker_toolchain_configure(
 #   name = "docker_config",

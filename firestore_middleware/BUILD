@@ -37,15 +37,15 @@ py_library(
 py_image(
     name = "docker_py",
     srcs = [
-        "firestore_middlware/__init__.py",
-        "firestore_middlware/app.py",
+        "__init__.py",
+        "app.py",
     ],
     base = "//experimental/python3:python3_root_amd64_debian10",
-    main = "firestore_middleware/app.py",
+    main = "app.py",
 )
 
 container_image(
-    name = "myapp_py",
-    base = ":docker_py",
-    cmd = ["/firestore_middleware/app.py"],
+    name = "docker_image",
+    base = ":app_py",
+#    cmd = ["/firestore_middleware/app.py"],
 )

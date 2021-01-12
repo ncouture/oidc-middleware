@@ -1,24 +1,38 @@
 
 # Table of Contents
 
-1.  [Developers](#org8517c97)
-    1.  [gcloud development environment](#org650dee8)
-    2.  [pre-commit hooks](#org69edeb8)
-    3.  [test coverage](#org8084094)
-2.  [Firestore](#orgb636a2c)
-    1.  [Start the local emulation server](#orgc7386d6)
-    2.  [Custom authentication](#orge82715a)
-3.  [References](#org214ff19)
+1.  [Document "Installation"](#org6258f7e)
+2.  [Build](#org4ab7c81)
+3.  [Developers](#org376bcae)
+    1.  [gcloud development environment](#org5c06bbb)
+    2.  [pre-commit hooks](#org0edefd1)
+    3.  [test coverage](#orgdc6494d)
+4.  [Firestore](#org379fcf9)
+    1.  [Start the local emulation server](#org1b87132)
+    2.  [Custom authentication](#org56aadfc)
+5.  [References](#orga49badb)
 
 **[aw]sgi firestore middleware**
 
 
-<a id="org8517c97"></a>
+<a id="org6258f7e"></a>
+
+# TODO Document "Installation"
+
+
+<a id="org4ab7c81"></a>
+
+# Build
+
+Install bazel as described on <https://docs.bazel.build/versions/3.7.0/install.html>
+
+
+<a id="org376bcae"></a>
 
 # Developers
 
 
-<a id="org650dee8"></a>
+<a id="org5c06bbb"></a>
 
 ## gcloud development environment
 
@@ -28,7 +42,7 @@
     gcloud alpha firestore databases create --project=project-id --region=region
 
 
-<a id="org69edeb8"></a>
+<a id="org0edefd1"></a>
 
 ## pre-commit hooks
 
@@ -36,26 +50,26 @@
     pre-commit install
 
 
-<a id="org8084094"></a>
+<a id="orgdc6494d"></a>
 
 ## test coverage
 
     interrogate -v .
 
 
-<a id="orgb636a2c"></a>
+<a id="org379fcf9"></a>
 
 # Firestore
 
 
-<a id="orgc7386d6"></a>
+<a id="org1b87132"></a>
 
 ## Start the local emulation server
 
     export GOOGLE_APPLICATION_CREDENTIALS="/home/user/Downloads/service-account-file.json"
 
 
-<a id="orge82715a"></a>
+<a id="org56aadfc"></a>
 
 ## Custom authentication
 
@@ -70,7 +84,7 @@ click on ****GENERATE NEW PRIVATE KEYS****.
 You will need it in the firestore/exampletokengenerator/auth.html.
 
 
-<a id="org214ff19"></a>
+<a id="orga49badb"></a>
 
 # References
 

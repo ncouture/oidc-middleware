@@ -6,6 +6,7 @@ from authlib.integrations.starlette_client import OAuth
 from authlib.integrations.starlette_client import OAuthError
 from fastapi import FastAPI
 from starlette.config import Config
+from starlette.datastructures import Secret
 from starlette.middleware.sessions import SessionMiddleware
 from starlette.requests import Request
 from starlette.responses import HTMLResponse
@@ -13,13 +14,14 @@ from starlette.responses import RedirectResponse
 
 app = FastAPI()
 
-app.add_middleware(SessionMiddleware, secret_key='!secret')
-
 config = Config('.env')
 oauth = OAuth(config)
 
-CONF_URL = 'https://accounts.google.com/.well-known/openid-configuration'
+app.add_middleware(
+    SessionMiddleware,
+    secret_key=config.get('APP_SECRET_KEY', cast=Secret, default='!sekret'))
 
+CONF_URL = 'https://accounts.google.com/.well-known/openid-configuration'
 oauth.register(
     name='google',
     server_metadata_url=CONF_URL,
@@ -28,9 +30,10 @@ oauth.register(
         'include_granted_scopes': 'true',
         'access_type': 'offline',
         'scope':
-            'openid email'
+            ' email'
             ' profile'
-            ' https://www.googleapis.com/auth/calendar'
+            ' offline'
+            ' https://www.googleapis.m/auth/calendar'
     })
 
 
